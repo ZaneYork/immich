@@ -39,7 +39,7 @@ export const addAssets = async (
   const notPresentAssetIds = dto.assetIds.filter((id) => !existingAssetIds.has(id));
   const allowedAssetIds = await checkAccess(access, {
     auth,
-    permission: Permission.ASSET_SHARE,
+    permission: Permission.ASSET_READ,
     ids: notPresentAssetIds,
   });
 
